@@ -6,27 +6,56 @@
         <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
     </head>
     <body>
-        
-        <div class="jooj">
-            <button class="botao"></button>
-            <button class="botao"></button>
-            <button class="botao"></button>
+        <!-- criação dos 9 botões do jogo -->
+        <div id="jogo">
+            <button class="botao" id="btn1"></button>
+            <button class="botao" id="btn2"></button>
+            <button class="botao" id="btn3"></button>
             <br>
-            <button class="botao"></button>
-            <button class="botao"></button>
-            <button class="botao"></button>
+            <button class="botao" id="btn4"></button>
+            <button class="botao" id="btn5"></button>
+            <button class="botao" id="btn6"></button>
             <br>
-            <button class="botao"></button>
-            <button class="botao"></button>
-            <button class="botao"></button>
+            <button class="botao" id="btn7"></button>
+            <button class="botao" id="btn8"></button>
+            <button class="botao" id="btn9"></button>
         </div>
-        
+        <div id=resultado>
+            <label>Pontos X:</label><div id="pontosX">0</div>
+            <br>
+            <label>Pontos O:</label><div id="pontosO">0</div>
+        </div>
     </body>
     
 </html>
 
 <script type="text/javascript">
+    var vez = "x";
+    var pontosX = 0;
+    var pontosO = 0;
 
-
+    $(document).on('click','.botao',function(){
+        var valor = $(this).val();
+        
+        //SE for a vez do X e o botão não tiver nenhum valor
+        if(vez == "x" && valor == ""){
+            //Troca imagem pelo X
+            $(this).css("background-image", "url(imgs/x.png)");
+            //Atribui valor X para o botão
+            $(this).val("x");
+            //Vez do O
+            vez = "o";
+        }
+        
+        //SE for a vez do O e o botão não tiver nenhum valor
+        else if(vez == "o" && valor == ""){
+            //Troca imagem pelo O
+            $(this).css("background-image", "url(imgs/o.png)");
+            //Atribui valor O para o botão
+            $(this).val("o");
+            //Vez do X
+            vez = "x";
+        }
+    });
     
 </script>
