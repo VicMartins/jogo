@@ -24,6 +24,8 @@
             <label>Pontos X:</label><div id="pontosX">0</div>
             <br>
             <label>Pontos O:</label><div id="pontosO">0</div>
+            <br>
+            <button id="resetar">Resetar</button>
         </div>
     </body>
     
@@ -33,6 +35,30 @@
     var vez = "x";
     var pontosX = 0;
     var pontosO = 0;
+    var jogadas = 0;
+
+    $(document).on('click','#resetar',function(){
+        $("#btn1").css("background-image", "url()");
+        $("#btn2").css("background-image", "url()");
+        $("#btn3").css("background-image", "url()");
+        $("#btn4").css("background-image", "url()");
+        $("#btn5").css("background-image", "url()");
+        $("#btn6").css("background-image", "url()");
+        $("#btn7").css("background-image", "url()");
+        $("#btn8").css("background-image", "url()");
+        $("#btn9").css("background-image", "url()");
+        $("#btn1").val("");
+        $("#btn2").val("");
+        $("#btn3").val("");
+        $("#btn4").val("");
+        $("#btn5").val("");
+        $("#btn6").val("");
+        $("#btn7").val("");
+        $("#btn8").val("");
+        $("#btn9").val("");
+        jogadas = 0;
+        habilitar();
+    })
 
     $(document).on('click','.botao',function(){
         var valor = $(this).val();
@@ -45,6 +71,7 @@
             $(this).val("x");
             //Vez do O
             vez = "o";
+            jogadas++;
         }
         
         //SE for a vez do O e o botão não tiver nenhum valor
@@ -55,7 +82,76 @@
             $(this).val("o");
             //Vez do X
             vez = "x";
+            jogadas++;
         }
-    });
+        
+        //SE X corresponde a alguma das Formas de ganhar
+        if($("#btn1").val() == "x" && $("#btn2").val() == "x" && $("#btn3").val() == "x" || 
+        $("#btn4").val() == "x" && $("#btn5").val() == "x" && $("#btn6").val() == "x" ||
+        $("#btn7").val() == "x" && $("#btn8").val() == "x" && $("#btn9").val() == "x" ||
+        $("#btn1").val() == "x" && $("#btn4").val() == "x" && $("#btn7").val() == "x" ||
+        $("#btn2").val() == "x" && $("#btn5").val() == "x" && $("#btn8").val() == "x" ||
+        $("#btn3").val() == "x" && $("#btn6").val() == "x" && $("#btn9").val() == "x" ||
+        $("#btn1").val() == "x" && $("#btn5").val() == "x" && $("#btn9").val() == "x" ||
+        $("#btn3").val() == "x" && $("#btn5").val() == "x" && $("#btn7").val() == "x"){
+            //Janela com a mensagem X venceu
+            alert("X venceu");
+            //Soma a Vitória nos pontos do X
+            pontosX++;
+            //Desibilita os botões
+            desabilitar();
+        }
+        
+        //SE O corresponde a alguma das Formas de ganhar
+        else if($("#btn1").val() == "o" && $("#btn2").val() == "o" && $("#btn3").val() == "o" || 
+        $("#btn4").val() == "o" && $("#btn5").val() == "o" && $("#btn6").val() == "o" ||
+        $("#btn7").val() == "o" && $("#btn8").val() == "o" && $("#btn9").val() == "o" ||
+        $("#btn1").val() == "o" && $("#btn4").val() == "o" && $("#btn7").val() == "o" ||
+        $("#btn2").val() == "o" && $("#btn5").val() == "o" && $("#btn8").val() == "o" ||
+        $("#btn3").val() == "o" && $("#btn6").val() == "o" && $("#btn9").val() == "o" ||
+        $("#btn1").val() == "o" && $("#btn5").val() == "o" && $("#btn9").val() == "o" ||
+        $("#btn3").val() == "o" && $("#btn5").val() == "o" && $("#btn7").val() == "o"){
+            //Janela com a mensagem O venceu
+            alert("O venceu");
+            //Soma a Vitória nos pontos do O
+            pontosO++;
+            //Desibilita os botões
+            desabilitar();
+        }
+        
+        else if(jogadas == 9){
+            alert("Velha");
+            desabilitar();
+        }
+        
+        //P
+        $("#pontosX").html(pontosX);
+        $("#pontosO").html(pontosO);
+        
+    })
+    
+    function desabilitar(){
+        $("#btn1").prop("disabled",true);
+        $("#btn2").prop("disabled",true);
+        $("#btn3").prop("disabled",true);
+        $("#btn4").prop("disabled",true);
+        $("#btn5").prop("disabled",true);
+        $("#btn6").prop("disabled",true);
+        $("#btn7").prop("disabled",true);
+        $("#btn8").prop("disabled",true);
+        $("#btn9").prop("disabled",true);
+    }
+    
+    function habilitar(){
+        $("#btn1").prop("disabled",false);
+        $("#btn2").prop("disabled",false);
+        $("#btn3").prop("disabled",false);
+        $("#btn4").prop("disabled",false);
+        $("#btn5").prop("disabled",false);
+        $("#btn6").prop("disabled",false);
+        $("#btn7").prop("disabled",false);
+        $("#btn8").prop("disabled",false);
+        $("#btn9").prop("disabled",false);
+    }
     
 </script>
