@@ -2,31 +2,84 @@
 <html>
     <head>
         <title>Jogo da Velha</title>
-        <link rel="stylesheet" href="css/style.css" type="text/css" />
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/estilo.css">
         <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
-    </head>
+
+ </head>
     <body>
         <!-- criação dos 9 botões do jogo -->
+        <div class="container">
         <div id="jogo">
-            <button class="botao" id="btn1"></button>
-            <button class="botao" id="btn2"></button>
-            <button class="botao" id="btn3"></button>
-            <br>
-            <button class="botao" id="btn4"></button>
-            <button class="botao" id="btn5"></button>
-            <button class="botao" id="btn6"></button>
-            <br>
-            <button class="botao" id="btn7"></button>
-            <button class="botao" id="btn8"></button>
-            <button class="botao" id="btn9"></button>
-        </div>
+
+            <h1>Jogo da Velha</h1>
+
+            <div class="jogo">
+             <div class="form-group">
+                <table class="tabelaVelha">
+                    <tr>
+                        <td style="border-style: solid; border-width: 5px; border-bottom: 1 ; border-top: 0; border-right: 1; border-left: 0; ">
+                             <button class="botao" id="btn1"></button>
+                        </td>
+                        <td style="border-style: solid; border-width: 5px; border-bottom: 1 ; border-top: 0; border-right: 1; border-left: 0; ">
+                            <button class="botao" id="btn2"></button>
+                        </td>
+                        <td style="border-style: solid; border-width: 5px; border-bottom: 1 ; border-top: 0; border-right: 0; border-left: 0; ">
+                            <button class="botao" id="btn3"></button>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td style="border-style: solid; border-width: 5px; border-bottom: 1 ; border-top: 0; border-right: 1; border-left: 0; ">
+                            <button class="botao" id="btn4"></button>
+                        </td>
+                        <td style="border-style: solid; border-width: 5px; border-bottom: 1 ; border-top: 0; border-right: 1; border-left: 0; ">
+                            <button class="botao" id="btn5"></button>
+                        </td>
+                        <td style="border-style: solid; border-width: 5px; border-bottom: 1 ; border-top: 0; border-right: 0; border-left: 0; ">
+                             <button class="botao" id="btn6"></button>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td style="border-style: solid; border-width: 5px; border-bottom: 0 ; border-top: 0; border-right: 1; border-left: 0; ">
+                             <button class="botao" id="btn7"></button>
+                        </td>
+                        <td style="border-style: solid; border-width: 5px; border-bottom: 0 ; border-top: 0; border-right: 1; border-left: 0; ">
+                             <button class="botao" id="btn8"></button>
+                        </td>
+                        <td style="border-style: solid; border-width: 5px; border-bottom: 0 ; border-top: 0; border-right: 0; border-left: 0; ">
+                             <button class="botao" id="btn9"></button>
+                        </td>
+                    </tr>
+              </table>
+      
+ 
         <div id=resultado>
+            <div class="row">
+             <div class="col-md-3">
+               <div class="form-group">
             <label>Pontos X:</label><div id="pontosX">0</div>
-            <br>
+            </div>
+             </div>           
+        
+             <div class="col-md-4">
+              <div class="form-group">
             <label>Pontos O:</label><div id="pontosO">0</div>
             <br>
-            <button id="resetar">Resetar</button>
+               </div>       
+             </div>
+           </div>
         </div>
+
+         <button type="button" name="button" class="btn  btn-primary" id="resetar">Resetar</button>
+    </div>
+  </div>
+</div>
+</div>
+
     </body>
     
 </html>
@@ -36,6 +89,8 @@
     var pontosX = 0;
     var pontosO = 0;
     var jogadas = 0;
+
+    //funcao do botao de reset
 
     $(document).on('click','#resetar',function(){
         $("#btn1").css("background-image", "url()");
@@ -118,13 +173,13 @@
             //Desibilita os botões
             desabilitar();
         }
-        
+         // se n for nem X ou O o jogo da velha
         else if(jogadas == 9){
             alert("Velha");
             desabilitar();
         }
         
-        //P
+        
         $("#pontosX").html(pontosX);
         $("#pontosO").html(pontosO);
         

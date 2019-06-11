@@ -1,7 +1,37 @@
 .botao{
     width: 150px;
     height: 150px;
-    border: 1px solid black;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;	
     background-size: 100%;
+    background-color: white;
+    padding-bottom: 5px;
+    box-shadow: 0px 4px rgb(0, 0, 0, 0.2), 0px 10px 15px rgb(0, 0, 0, 0.5);
+  
 }
+
+.jogo{
+	 text-align: center;
+	 font-family: fantasy;
+
+}
+.container h1{
+	text-align: center;
+	margin-right: 40px;
+	margin-top: 20px;
+	font-family: fantasy;
+}
+#resultado{
+	margin-left: 350px;
+	margin-top: 10px;
+	
+}
+#pontosX{
+  font-family: fantasy;
+}
+#resetar{
+	color: black;
+}
+.tabelaVelha{
+	margin-left: 300px;
+}
+
