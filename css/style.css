@@ -20,18 +20,28 @@
 	margin-top: 20px;
 	font-family: fantasy;
 }
-#resultado{
-	margin-left: 350px;
-	margin-top: 10px;
-	
-}
+
 #pontosX{
-  font-family: fantasy;
+  font-family: sans-serif;
+  font-size: 25px;
 }
 #resetar{
-	color: black;
-}
-.tabelaVelha{
-	margin-left: 300px;
+	color: white;
 }
 
+.contagem {
+	font-weight: bold;
+	font-size: 26px;
+}
+.teste {
+	display: block;
+	border: red;
+}
+.caralho  {
+	display: flex;
+	justify-content: center;
+}
+#pontosO  {
+font-family: sans-serif;
+  font-size: 25px;
+}

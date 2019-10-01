@@ -1,87 +1,105 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Jogo da Velha</title>
-        <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/estilo.css">
-        <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
 
- </head>
-    <body>
-        <!-- criação dos 9 botões do jogo -->
-        <div class="container">
+<head>
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+
+</head>
+
+<body>
+    <!-- criação dos 9 botões do jogo -->
+    <div class="container">
         <div id="jogo">
-
-            <h1>Jogo da Velha</h1>
-
-            <div class="jogo">
-             <div class="form-group">
-                <table class="tabelaVelha">
-                    <tr>
-                        <td style="border-style: solid; border-width: 5px; border-bottom: 1 ; border-top: 0; border-right: 1; border-left: 0; ">
-                             <button class="botao" id="btn1"></button>
-                        </td>
-                        <td style="border-style: solid; border-width: 5px; border-bottom: 1 ; border-top: 0; border-right: 1; border-left: 0; ">
-                            <button class="botao" id="btn2"></button>
-                        </td>
-                        <td style="border-style: solid; border-width: 5px; border-bottom: 1 ; border-top: 0; border-right: 0; border-left: 0; ">
-                            <button class="botao" id="btn3"></button>
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <td style="border-style: solid; border-width: 5px; border-bottom: 1 ; border-top: 0; border-right: 1; border-left: 0; ">
-                            <button class="botao" id="btn4"></button>
-                        </td>
-                        <td style="border-style: solid; border-width: 5px; border-bottom: 1 ; border-top: 0; border-right: 1; border-left: 0; ">
-                            <button class="botao" id="btn5"></button>
-                        </td>
-                        <td style="border-style: solid; border-width: 5px; border-bottom: 1 ; border-top: 0; border-right: 0; border-left: 0; ">
-                             <button class="botao" id="btn6"></button>
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <td style="border-style: solid; border-width: 5px; border-bottom: 0 ; border-top: 0; border-right: 1; border-left: 0; ">
-                             <button class="botao" id="btn7"></button>
-                        </td>
-                        <td style="border-style: solid; border-width: 5px; border-bottom: 0 ; border-top: 0; border-right: 1; border-left: 0; ">
-                             <button class="botao" id="btn8"></button>
-                        </td>
-                        <td style="border-style: solid; border-width: 5px; border-bottom: 0 ; border-top: 0; border-right: 0; border-left: 0; ">
-                             <button class="botao" id="btn9"></button>
-                        </td>
-                    </tr>
-              </table>
-      
- 
-        <div id=resultado>
             <div class="row">
-             <div class="col-md-3">
-               <div class="form-group">
-            <label>Pontos X:</label><div id="pontosX">0</div>
+                <div class="col">
+                    <h1>Jogo da Velha</h1>
+                </div>
             </div>
-             </div>           
-        
-             <div class="col-md-4">
-              <div class="form-group">
-            <label>Pontos O:</label><div id="pontosO">0</div>
-            <br>
-               </div>       
-             </div>
-           </div>
+            <div class="row tabela-do-jogo">
+                <div class="col-12">
+                    <div class="jogo caralho">
+                        <div class="form-group">
+                            <table class="tabelaVelha">
+                                <!--she created a line with 3 buttons representing click spaces.-->
+                                <tr>
+                                    <td
+                                        style="border-style: solid; border-width: 5px; border-bottom: 1 ; border-top: 0; border-right: 1; border-left: 0; ">
+                                        <button class="botao" id="btn1"></button>
+                                    </td>
+                                    <td
+                                        style="border-style: solid; border-width: 5px; border-bottom: 1 ; border-top: 0; border-right: 1; border-left: 0; ">
+                                        <button class="botao" id="btn2"></button>
+                                    </td>
+                                    <td
+                                        style="border-style: solid; border-width: 5px; border-bottom: 1 ; border-top: 0; border-right: 0; border-left: 0; ">
+                                        <button class="botao" id="btn3"></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td
+                                        style="border-style: solid; border-width: 5px; border-bottom: 1 ; border-top: 0; border-right: 1; border-left: 0; ">
+                                        <button class="botao" id="btn4"></button>
+                                    </td>
+                                    <td
+                                        style="border-style: solid; border-width: 5px; border-bottom: 1 ; border-top: 0; border-right: 1; border-left: 0; ">
+                                        <button class="botao" id="btn5"></button>
+                                    </td>
+                                    <td
+                                        style="border-style: solid; border-width: 5px; border-bottom: 1 ; border-top: 0; border-right: 0; border-left: 0; ">
+                                        <button class="botao" id="btn6"></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td
+                                        style="border-style: solid; border-width: 5px; border-bottom: 0 ; border-top: 0; border-right: 1; border-left: 0; ">
+                                        <button class="botao" id="btn7"></button>
+                                    </td>
+                                    <td
+                                        style="border-style: solid; border-width: 5px; border-bottom: 0 ; border-top: 0; border-right: 1; border-left: 0; ">
+                                        <button class="botao" id="btn8"></button>
+                                    </td>
+                                    <td
+                                        style="border-style: solid; border-width: 5px; border-bottom: 0 ; border-top: 0; border-right: 0; border-left: 0; ">
+                                        <button class="botao" id="btn9"></button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row pontuacao">
+                <!--He  created theresults div-->
+                <div class="col-6">
+                    <div class="form-group redondo">
+                        <label class="contagem">Pontos ❌
+                        </label>
+                        <div id="pontosX" class="border border-dark">0</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group redondo">
+                        <label class="contagem ">Pontos ⭕</label>
+                        <div id="pontosO" class="border border-dark">0</div>
+                        </br>
+                    </div>
+                </div>
+            </div>
         </div>
-
-         <button type="button" name="button" class="btn  btn-primary" id="resetar">Resetar</button>
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" name="button" class="btn  btn-primary" id="resetar">Resetar</button>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-</div>
+</body>
 
-    </body>
-    
 </html>
 
 <script type="text/javascript">
@@ -92,7 +110,7 @@
 
     //funcao do botao de reset
 
-    $(document).on('click','#resetar',function(){
+    $(document).on('click', '#resetar', function () {
         $("#btn1").css("background-image", "url()");
         $("#btn2").css("background-image", "url()");
         $("#btn3").css("background-image", "url()");
@@ -115,11 +133,11 @@
         habilitar();
     })
 
-    $(document).on('click','.botao',function(){
+    $(document).on('click', '.botao', function () {
         var valor = $(this).val();
-        
+
         //SE for a vez do X e o botão não tiver nenhum valor
-        if(vez == "x" && valor == ""){
+        if (vez == "x" && valor == "") {
             //Troca imagem pelo X
             $(this).css("background-image", "url(imgs/x.png)");
             //Atribui valor X para o botão
@@ -128,9 +146,9 @@
             vez = "o";
             jogadas++;
         }
-        
+
         //SE for a vez do O e o botão não tiver nenhum valor
-        else if(vez == "o" && valor == ""){
+        else if (vez == "o" && valor == "") {
             //Troca imagem pelo O
             $(this).css("background-image", "url(imgs/o.png)");
             //Atribui valor O para o botão
@@ -139,16 +157,16 @@
             vez = "x";
             jogadas++;
         }
-        
+
         //SE X corresponde a alguma das Formas de ganhar
-        if($("#btn1").val() == "x" && $("#btn2").val() == "x" && $("#btn3").val() == "x" || 
-        $("#btn4").val() == "x" && $("#btn5").val() == "x" && $("#btn6").val() == "x" ||
-        $("#btn7").val() == "x" && $("#btn8").val() == "x" && $("#btn9").val() == "x" ||
-        $("#btn1").val() == "x" && $("#btn4").val() == "x" && $("#btn7").val() == "x" ||
-        $("#btn2").val() == "x" && $("#btn5").val() == "x" && $("#btn8").val() == "x" ||
-        $("#btn3").val() == "x" && $("#btn6").val() == "x" && $("#btn9").val() == "x" ||
-        $("#btn1").val() == "x" && $("#btn5").val() == "x" && $("#btn9").val() == "x" ||
-        $("#btn3").val() == "x" && $("#btn5").val() == "x" && $("#btn7").val() == "x"){
+        if ($("#btn1").val() == "x" && $("#btn2").val() == "x" && $("#btn3").val() == "x" ||
+            $("#btn4").val() == "x" && $("#btn5").val() == "x" && $("#btn6").val() == "x" ||
+            $("#btn7").val() == "x" && $("#btn8").val() == "x" && $("#btn9").val() == "x" ||
+            $("#btn1").val() == "x" && $("#btn4").val() == "x" && $("#btn7").val() == "x" ||
+            $("#btn2").val() == "x" && $("#btn5").val() == "x" && $("#btn8").val() == "x" ||
+            $("#btn3").val() == "x" && $("#btn6").val() == "x" && $("#btn9").val() == "x" ||
+            $("#btn1").val() == "x" && $("#btn5").val() == "x" && $("#btn9").val() == "x" ||
+            $("#btn3").val() == "x" && $("#btn5").val() == "x" && $("#btn7").val() == "x") {
             //Janela com a mensagem X venceu
             alert("X venceu");
             //Soma a Vitória nos pontos do X
@@ -156,16 +174,16 @@
             //Desibilita os botões
             desabilitar();
         }
-        
+
         //SE O corresponde a alguma das Formas de ganhar
-        else if($("#btn1").val() == "o" && $("#btn2").val() == "o" && $("#btn3").val() == "o" || 
-        $("#btn4").val() == "o" && $("#btn5").val() == "o" && $("#btn6").val() == "o" ||
-        $("#btn7").val() == "o" && $("#btn8").val() == "o" && $("#btn9").val() == "o" ||
-        $("#btn1").val() == "o" && $("#btn4").val() == "o" && $("#btn7").val() == "o" ||
-        $("#btn2").val() == "o" && $("#btn5").val() == "o" && $("#btn8").val() == "o" ||
-        $("#btn3").val() == "o" && $("#btn6").val() == "o" && $("#btn9").val() == "o" ||
-        $("#btn1").val() == "o" && $("#btn5").val() == "o" && $("#btn9").val() == "o" ||
-        $("#btn3").val() == "o" && $("#btn5").val() == "o" && $("#btn7").val() == "o"){
+        else if ($("#btn1").val() == "o" && $("#btn2").val() == "o" && $("#btn3").val() == "o" ||
+            $("#btn4").val() == "o" && $("#btn5").val() == "o" && $("#btn6").val() == "o" ||
+            $("#btn7").val() == "o" && $("#btn8").val() == "o" && $("#btn9").val() == "o" ||
+            $("#btn1").val() == "o" && $("#btn4").val() == "o" && $("#btn7").val() == "o" ||
+            $("#btn2").val() == "o" && $("#btn5").val() == "o" && $("#btn8").val() == "o" ||
+            $("#btn3").val() == "o" && $("#btn6").val() == "o" && $("#btn9").val() == "o" ||
+            $("#btn1").val() == "o" && $("#btn5").val() == "o" && $("#btn9").val() == "o" ||
+            $("#btn3").val() == "o" && $("#btn5").val() == "o" && $("#btn7").val() == "o") {
             //Janela com a mensagem O venceu
             alert("O venceu");
             //Soma a Vitória nos pontos do O
@@ -173,40 +191,40 @@
             //Desibilita os botões
             desabilitar();
         }
-         // se n for nem X ou O o jogo da velha
-        else if(jogadas == 9){
+        // se n for nem X ou O o jogo da velha
+        else if (jogadas == 9) {
             alert("Velha");
             desabilitar();
         }
-        
-        
+
+
         $("#pontosX").html(pontosX);
         $("#pontosO").html(pontosO);
-        
+
     })
-    
-    function desabilitar(){
-        $("#btn1").prop("disabled",true);
-        $("#btn2").prop("disabled",true);
-        $("#btn3").prop("disabled",true);
-        $("#btn4").prop("disabled",true);
-        $("#btn5").prop("disabled",true);
-        $("#btn6").prop("disabled",true);
-        $("#btn7").prop("disabled",true);
-        $("#btn8").prop("disabled",true);
-        $("#btn9").prop("disabled",true);
+
+    function desabilitar() {
+        $("#btn1").prop("disabled", true);
+        $("#btn2").prop("disabled", true);
+        $("#btn3").prop("disabled", true);
+        $("#btn4").prop("disabled", true);
+        $("#btn5").prop("disabled", true);
+        $("#btn6").prop("disabled", true);
+        $("#btn7").prop("disabled", true);
+        $("#btn8").prop("disabled", true);
+        $("#btn9").prop("disabled", true);
     }
-    
-    function habilitar(){
-        $("#btn1").prop("disabled",false);
-        $("#btn2").prop("disabled",false);
-        $("#btn3").prop("disabled",false);
-        $("#btn4").prop("disabled",false);
-        $("#btn5").prop("disabled",false);
-        $("#btn6").prop("disabled",false);
-        $("#btn7").prop("disabled",false);
-        $("#btn8").prop("disabled",false);
-        $("#btn9").prop("disabled",false);
+
+    function habilitar() {
+        $("#btn1").prop("disabled", false);
+        $("#btn2").prop("disabled", false);
+        $("#btn3").prop("disabled", false);
+        $("#btn4").prop("disabled", false);
+        $("#btn5").prop("disabled", false);
+        $("#btn6").prop("disabled", false);
+        $("#btn7").prop("disabled", false);
+        $("#btn8").prop("disabled", false);
+        $("#btn9").prop("disabled", false);
     }
-    
+
 </script>
